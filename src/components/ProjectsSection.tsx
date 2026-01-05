@@ -7,7 +7,7 @@ const projects = [
   {
     title: "RideShareX",
     description:
-      "🚗 RideShareX - Peer-to-Peer Vehicle Rental Platform(5th Sem Project)",
+      "RideShareX is a peer-to-peer vehicle renting platform that enables users to rent and lend vehicles within their community. Instead of depending on rental agencies, people can list their own cars, bikes, or scooters for others to rent. This promotes the shared economy, helps owners earn passive income, and provides renters with flexible and budget-friendly options.",
     tags: ["Node.js", "React", "MongoDB", "Socket.io", "REST API"],
     icon: Server,
     featured: false,
