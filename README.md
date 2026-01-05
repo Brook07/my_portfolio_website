@@ -1,73 +1,98 @@
-# Welcome to your Lovable project
+# Portfolio Website
 
-## Project info
+A modern, responsive personal portfolio website showcasing my projects, skills, and experience as a Full-Stack Developer.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Features
 
-## How can I edit this code?
+- **Responsive Design** - Fully responsive layout that works seamlessly across all devices
+- **Modern UI/UX** - Clean, professional design with smooth animations and transitions
+- **Project Showcase** - Featured projects with detailed descriptions and GitHub links
+- **Skills Section** - Comprehensive overview of technical skills and expertise
+- **Contact Integration** - Easy ways to connect via email and social media
+- **Dark Theme** - Eye-friendly dark theme with custom color scheme
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **Frontend Framework:** React 18 with TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+Clone the repository and install dependencies:
 
-**Use your preferred IDE**
+```bash
+git clone https://github.com/Brook07/my_portfolio_website.git
+cd my_portfolio_website
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🏃‍♂️ Running Locally
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Start the development server:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🔨 Building for Production
 
-**Use GitHub Codespaces**
+Create a production build:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build
+```
 
-## What technologies are used for this project?
+Preview the production build locally:
 
-This project is built with:
+```bash
+npm run preview
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📂 Project Structure
 
-## How can I deploy this project?
+```
+src/
+├── components/          # React components
+│   ├── ui/             # shadcn/ui components
+│   ├── AboutSection.tsx
+│   ├── ContactSection.tsx
+│   ├── HeroSection.tsx
+│   ├── ProjectsSection.tsx
+│   └── SkillsSection.tsx
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── pages/              # Page components
+├── App.tsx             # Main App component
+└── main.tsx            # Entry point
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 🎨 Customization
 
-## Can I connect a custom domain to my Lovable project?
+To customize this portfolio for your own use:
 
-Yes, you can!
+1. Update personal information in `HeroSection.tsx`
+2. Add your projects in `ProjectsSection.tsx`
+3. Update skills in `SkillsSection.tsx`
+4. Modify contact information in `ContactSection.tsx`
+5. Adjust color scheme in `tailwind.config.ts`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📝 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is open source and available under the MIT License.
+
+## 🤝 Connect
+
+Feel free to reach out if you have any questions or suggestions!
+
+- GitHub: [@Brook07](https://github.com/Brook07)
+- Email: [Your Email]
+
+---
+
+Built with ❤️ by Utsav Adhikari
