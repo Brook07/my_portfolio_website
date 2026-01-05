@@ -86,13 +86,4 @@ To customize this portfolio for your own use:
 
 This project is open source and available under the MIT License.
 
-## 🤝 Connect
 
-Feel free to reach out if you have any questions or suggestions!
-
-- GitHub: [@Brook07](https://github.com/Brook07)
-- Email: [Your Email]
-
----
-
-Built with ❤️ by Utsav Adhikari
