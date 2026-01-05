@@ -122,10 +122,10 @@ const HeroSection = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-2 p-4 rounded-xl bg-card/30 border border-border/30"
+                className="group flex flex-col items-center gap-2 p-4 rounded-xl bg-card/30 border border-border/30 card-glow glow-effect-sm hover:glow-effect hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:scale-105 transform-gpu hover:shadow-lg transition-all duration-200"
               >
-                <item.icon className="w-6 h-6 text-primary" />
-                <span className="text-xs text-muted-foreground">{item.label}</span>
+                <item.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-200" />
+                <span className="text-xs text-muted-foreground group-hover:text-white transition-colors duration-200">{item.label}</span>
               </div>
             ))}
           </motion.div>

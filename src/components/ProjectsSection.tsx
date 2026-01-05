@@ -131,14 +131,21 @@ const ProjectsSection = () => {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-muted-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {project.tags.map((tag) => {
+                    const isSpecial = ["Full-Stack", "System Design", "Backend"].includes(tag);
+                    return (
+                      <span
+                        key={tag}
+                        className={`px-3 py-1 text-xs font-medium rounded-full bg-secondary text-muted-foreground ${
+                          isSpecial
+                            ? "hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white transform-gpu hover:scale-105 hover:shadow-md transition-all duration-200"
+                            : "transition-colors"
+                        }`}
+                      >
+                        {tag}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
 

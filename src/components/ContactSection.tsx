@@ -68,13 +68,42 @@ const ContactSection = () => {
             <p className="text-muted-foreground mb-6">
               Have a project idea or just want to say hi? My inbox is always open.
             </p>
-            <a
-              href="mailto:utsav@example.com"
+            <button
+              type="button"
               className="btn-primary inline-flex items-center gap-2"
+              onClick={(e) => {
+                e.preventDefault();
+                const to = 'utsavadhr@gmail.com';
+                const subject = '';
+                const body = '';
+                const gmailWeb = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+                  to
+                )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                const gmailApp = `googlegmail://co?to=${encodeURIComponent(
+                  to
+                )}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+                if (isMobile) {
+                  // Try to open Gmail app first, then fallback to web compose
+                  try {
+                    window.location.href = gmailApp;
+                  } catch (err) {
+                    // ignore
+                  }
+                  setTimeout(() => {
+                    window.open(gmailWeb, '_blank', 'noopener');
+                  }, 600);
+                } else {
+                  // Desktop: open Gmail web compose in a new tab
+                  window.open(gmailWeb, '_blank', 'noopener');
+                }
+              }}
             >
               Send an Email
               <ArrowUpRight size={16} />
-            </a>
+            </button>
           </div>
 
           {/* Social Links */}
