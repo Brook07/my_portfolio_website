@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, Target, Lightbulb } from "lucide-react";
+import {
+  GraduationCap,
+  Target,
+  Lightbulb,
+  Code2,
+} from "lucide-react";
 
 const interests = [
   { emoji: "🏀", title: "Basketball & Fitness", subtitle: "Discipline" },
@@ -17,6 +22,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-24 relative" ref={ref}>
       <div className="container mx-auto px-6">
+        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -39,6 +45,7 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
+            {/* Education */}
             <div className="skill-card">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-primary/10 text-primary">
@@ -58,6 +65,31 @@ const AboutSection = () => {
               </div>
             </div>
 
+
+            {/* Web & App Development (NEW CARD) */}
+            <div className="skill-card">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                  <Code2 size={24} />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    Web & App Development
+                  </h3>
+                  <p className="text-muted-foreground">
+                    I work as a{" "}
+                    <span className="text-primary">
+                      web and app developer
+                    </span>
+                    , building responsive web applications and scalable backend
+                    systems. I enjoy transforming ideas into real-world products
+                    using modern technologies and clean architecture.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Focus Areas */}
             <div className="skill-card">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-primary/10 text-primary">
@@ -70,14 +102,18 @@ const AboutSection = () => {
                   <p className="text-muted-foreground">
                     Deep interest in{" "}
                     <span className="text-primary">system design</span> and{" "}
-                    <span className="text-primary">backend architecture</span>.
-                    I love understanding how complex systems work under the hood
-                    and designing scalable solutions.
+                    <span className="text-primary">
+                      backend architecture
+                    </span>
+                    . I enjoy understanding how complex systems work under the
+                    hood and designing scalable solutions.
                   </p>
                 </div>
               </div>
             </div>
 
+
+            {/* Philosophy */}
             <div className="skill-card">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-primary/10 text-primary">
@@ -106,13 +142,17 @@ const AboutSection = () => {
             <h3 className="text-xl font-semibold text-foreground mb-6">
               Beyond Coding
             </h3>
+
             <div className="grid grid-cols-2 gap-4">
               {interests.map((interest, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.5 + index * 0.1,
+                  }}
                   className="skill-card text-center group cursor-default"
                 >
                   <span className="text-4xl mb-3 block group-hover:scale-110 transition-transform duration-300">
@@ -121,7 +161,9 @@ const AboutSection = () => {
                   <h4 className="font-medium text-foreground mb-1">
                     {interest.title}
                   </h4>
-                  <p className="text-sm text-primary">{interest.subtitle}</p>
+                  <p className="text-sm text-primary">
+                    {interest.subtitle}
+                  </p>
                 </motion.div>
               ))}
             </div>
