@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Code2, Boxes, Server } from "lucide-react";
+import { Code2, Boxes, Server, Download } from "lucide-react";
 
 const roles = [
   "Aspiring Full-Stack Developer",
@@ -105,8 +105,13 @@ const HeroSection = () => {
               <a href="#projects" className="btn-primary">
                 View Projects
               </a>
-              <a href="#contact" className="btn-outline">
-                Contact / Connect
+              <a
+                href="/Utsav_Adhikari_CV.pdf"
+                download="Utsav_Adhikari_CV.pdf"
+                className="btn-cv group"
+              >
+                <Download size={18} className="group-hover:animate-bounce" />
+                Download CV
               </a>
             </motion.div>
 

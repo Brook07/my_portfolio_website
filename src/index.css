@@ -124,6 +124,20 @@
     @apply transition-all duration-300 hover:bg-primary/10 hover:border-primary/50;
   }
 
+  .btn-cv {
+    @apply inline-flex items-center gap-2 font-medium px-6 py-3 rounded-lg;
+    @apply transition-all duration-300 hover:scale-105;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.05) 100%);
+    border: 1px solid hsl(var(--primary) / 0.4);
+    color: hsl(var(--primary));
+  }
+
+  .btn-cv:hover {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.25) 0%, hsl(var(--primary) / 0.1) 100%);
+    border-color: hsl(var(--primary) / 0.7);
+    box-shadow: 0 0 20px -4px hsl(var(--primary) / 0.3);
+  }
+
   .section-heading {
     @apply text-3xl md:text-4xl font-bold text-foreground mb-4;
   }
