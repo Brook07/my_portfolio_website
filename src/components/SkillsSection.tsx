@@ -39,15 +39,15 @@ const skillCategories = [
     ],
   },
   {
-    title: "Tools & Other",
-    skills: [
-      { name: "Git", icon: "📦" },
-      { name: "Docker", icon: "🐳" },
-      { name: "Godot", icon: "🎮" },
-      { name: "Linux", icon: "🐧" },
-    ],
-  },
-];
+  title: "Tools & Other",
+  skills: [
+    { name: "Git", icon: "📦" },
+    { name: "Docker", icon: "🐳" },
+    { name: "Jupyter", icon: "📓" },
+    { name: "Linux", icon: "🐧" },
+    { name: "Godot", icon: "🎮" },
+  ],
+},
 
 const SkillsSection = () => {
   const ref = useRef(null);
