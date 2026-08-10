@@ -1,9 +1,21 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github, Server, Users, Layers, Gamepad2 } from "lucide-react";
+import { ExternalLink, Github, Server, Layers, Gamepad2 } from "lucide-react";
 
 const projects = [
+  {
+    title: "Landslide Susceptibility Mapping",
+    description:
+      "A machine-learning and GIS platform for mapping landslide susceptibility in Sindhupalchok, Nepal. It combines terrain data with live rainfall to provide a static risk map and dynamic landslide-warning dashboard.",
+    tags: ["Python", "Machine Learning", "GIS", "Data Visualization"],
+    icon: Layers,
+    featured: false,
+    links: {
+      github: "https://github.com/Brook07/landslide-susceptibility-sindhupalchok",
+      demo: null,
+    },
+  },
   {
     title: "RideShareX",
     description:
@@ -37,18 +49,6 @@ const projects = [
     featured: false,
     links: {
       github: "https://github.com/Brook07/Typescape",
-      demo: null,
-    },
-  },
-  {
-    title: "CONNECTIFY",
-    description:
-      "Social Networking Mobile App based on common interests. Connect with people who share your passions, hobbies, and interests through an intuitive mobile platform.",
-    tags: ["React Native", "Node.js", "MongoDB", "Mobile Development"],
-    icon: Users,
-    featured: false,
-    links: {
-      github: "https://github.com/Brook07/CONNECTIFY",
       demo: null,
     },
   },

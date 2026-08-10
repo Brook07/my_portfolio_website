@@ -48,6 +48,7 @@ const skillCategories = [
     { name: "Godot", icon: "🎮" },
   ],
 },
+];
 
 const SkillsSection = () => {
   const ref = useRef(null);
