@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Github, Linkedin, Instagram, MessageCircle, Mail, ArrowUpRight, Phone, Copy } from "lucide-react";
+import { Github, Linkedin, Instagram, MessageCircle, Mail, ArrowUp, ArrowUpRight, Phone, Copy } from "lucide-react";
+import Webring from "./Webring";
 
 const socials = [
   {
@@ -33,6 +34,7 @@ const socials = [
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <section id="contact" className="py-24 relative" ref={ref}>
@@ -102,20 +104,8 @@ const ContactSection = () => {
               <ArrowUpRight size={16} />
             </button>
 
-            <div className="mt-4 text-sm">
-              <div className="inline-flex items-center gap-3 text-muted-foreground">
-                <Phone className="w-5 h-5 text-primary" />
-                <a href="tel:9822446744" className="font-medium text-foreground">9822446744</a>
-                <button
-                  type="button"
-                  aria-label="Copy phone"
-                  onClick={() => navigator.clipboard?.writeText('9822446744')}
-                  className="p-2 rounded-md bg-secondary/10 hover:bg-secondary/20 transition-colors"
-                >
-                  <Copy className="w-4 h-4 text-muted-foreground" />
-                </button>
-              </div>
-
+            <div className="mt-8 flex flex-col items-center gap-5 text-sm">
+              <PhoneCopyRow />
               <EmailCopyRow />
             </div>
           </div>
@@ -137,6 +127,20 @@ const ContactSection = () => {
                 <span className="text-sm font-medium">{social.name}</span>
               </motion.a>
             ))}
+          </div>
+
+          <div className="mt-6 flex flex-col items-center justify-end gap-4 sm:flex-row">
+            <Webring />
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="group flex items-center gap-3 rounded-full border border-primary/30 bg-card/80 px-4 py-2 text-sm font-medium text-primary shadow-sm transition-all hover:scale-105 hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_20px_-6px_hsl(var(--primary))]"
+            >
+              Back to top
+              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-primary/50 bg-primary/10 transition-all group-hover:bg-primary group-hover:text-primary-foreground">
+                <ArrowUp size={14} />
+              </span>
+            </button>
           </div>
         </motion.div>
       </div>
@@ -161,18 +165,55 @@ function EmailCopyRow() {
   };
 
   return (
-    <div className="mt-3 inline-flex items-center gap-3 text-muted-foreground">
+    <div className="flex flex-wrap items-center justify-center gap-3 text-muted-foreground">
       <Mail className="w-5 h-5 text-primary" />
       <a href="mailto:utsavadhr@gmail.com" className="font-medium text-foreground">{email}</a>
       <button
         type="button"
         aria-label="Copy email"
         onClick={handleCopy}
-        className="p-2 rounded-md bg-secondary/10 hover:bg-secondary/20 transition-colors"
+        className={`rounded-md border bg-secondary/60 p-2 transition-colors ${
+          copied
+            ? "border-primary/50 bg-primary/15 text-primary"
+            : "border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
+        }`}
       >
-        <Copy className="w-4 h-4 text-muted-foreground" />
+        <Copy className="w-4 h-4" />
       </button>
-      <span className="ml-2 text-sm text-primary" aria-hidden>{copied ? 'Copied!' : ''}</span>
+    </div>
+  );
+}
+
+function PhoneCopyRow() {
+  const [copied, setCopied] = useState(false);
+  const phone = "9822446744";
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(phone);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // Clipboard access may be unavailable in some browsers.
+    }
+  };
+
+  return (
+    <div className="flex flex-wrap items-center justify-center gap-3 text-muted-foreground">
+      <Phone className="h-5 w-5 text-primary" />
+      <a href={`tel:${phone}`} className="font-medium text-foreground">{phone}</a>
+      <button
+        type="button"
+        aria-label="Copy phone number"
+        onClick={handleCopy}
+        className={`rounded-md border bg-secondary/60 p-2 transition-colors ${
+          copied
+            ? "border-primary/50 bg-primary/15 text-primary"
+            : "border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
+        }`}
+      >
+        <Copy className="h-4 w-4" />
+      </button>
     </div>
   );
 }

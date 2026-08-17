@@ -22,10 +22,10 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             onClick={scrollToTop}
-            className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="group flex items-center gap-3 rounded-full border border-primary/30 bg-card/80 px-4 py-2 text-sm font-medium text-primary shadow-sm transition-all hover:scale-105 hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_20px_-6px_hsl(var(--primary))]"
           >
             Back to top
-            <span className="w-8 h-8 rounded-full border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-primary/50 bg-primary/10 transition-all group-hover:bg-primary group-hover:text-primary-foreground">
               <ArrowUp size={14} />
             </span>
           </motion.button>

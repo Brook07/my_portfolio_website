@@ -176,6 +176,25 @@
     @apply relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5;
     @apply after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
   }
+
+  /* Third-party Webring controls */
+  #webring a,
+  #webring button {
+    color: hsl(var(--foreground)) !important;
+    background: hsl(var(--card)) !important;
+    border: 1px solid hsl(var(--primary) / 0.5) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 0 18px -8px hsl(var(--primary) / 0.7) !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+  }
+
+  #webring a:hover,
+  #webring button:hover {
+    color: hsl(var(--primary-foreground)) !important;
+    background: hsl(var(--primary)) !important;
+    border-color: hsl(var(--primary)) !important;
+  }
 }
 
 @layer utilities {
