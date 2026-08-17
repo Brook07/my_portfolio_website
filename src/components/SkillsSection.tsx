@@ -1,53 +1,15 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { Braces, Code2, Target } from "lucide-react";
 import { useRef } from "react";
 
 const skillCategories = [
+  { title: "Languages", icon: Code2, skills: ["C", "C++", "Python", "JavaScript", "SQL"] },
+  { title: "Frameworks", icon: Braces, skills: ["React", "Express.js", "Django"] },
   {
-    title: "Languages",
-    skills: [
-      { name: "C", icon: "🔧" },
-      { name: "C++", icon: "⚡" },
-      { name: "Python", icon: "🐍" },
-      { name: "JavaScript", icon: "💛" },
-    ],
+    title: "Specialties",
+    icon: Target,
+    skills: ["MERN Stack", "Backend", "AI/ML", "GIS & Geospatial Systems"],
   },
-  {
-    title: "Frontend",
-    skills: [
-      { name: "React", icon: "⚛️" },
-      { name: "HTML", icon: "📄" },
-      { name: "CSS", icon: "🎨" },
-      { name: "Tailwind", icon: "💨" },
-    ],
-  },
-  {
-    title: "Backend",
-    skills: [
-      { name: "Node.js", icon: "🟢" },
-      { name: "Express", icon: "🚂" },
-      { name: "PHP", icon: "🐘" },
-      { name: "REST APIs", icon: "🔗" },
-    ],
-  },
-  {
-    title: "Databases",
-    skills: [
-      { name: "MongoDB", icon: "🍃" },
-      { name: "MySQL", icon: "🐬" },
-      { name: "PostgreSQL", icon: "🐘" },
-    ],
-  },
-  {
-  title: "Tools & Other",
-  skills: [
-    { name: "Git", icon: "📦" },
-    { name: "Docker", icon: "🐳" },
-    { name: "Jupyter", icon: "📓" },
-    { name: "Linux", icon: "🐧" },
-    { name: "Godot", icon: "🎮" },
-  ],
-},
 ];
 
 const SkillsSection = () => {
@@ -64,7 +26,7 @@ const SkillsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="section-heading">
-            Tech <span className="text-gradient">Stack</span>
+            My <span className="text-gradient">Skills</span>
           </h2>
         </motion.div>
 
@@ -77,28 +39,20 @@ const SkillsSection = () => {
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
               className="skill-card p-6"
             >
-              <h3 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+              <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-primary">
+                <category.icon size={20} />
                 {category.title}
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
-                    key={skill.name}
+                    key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{
-                      duration: 0.3,
-                      delay: categoryIndex * 0.1 + skillIndex * 0.05 + 0.3,
-                    }}
-                    className="flex items-center gap-2 p-3 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors group cursor-default"
+                    transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 + 0.3 }}
+                    className="flex items-center rounded-lg bg-secondary/50 p-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
                   >
-                    <span className="text-lg group-hover:scale-110 transition-transform">
-                      {skill.icon}
-                    </span>
-                    <span className="text-sm text-foreground font-medium">
-                      {skill.name}
-                    </span>
+                    {skill}
                   </motion.div>
                 ))}
               </div>
@@ -106,19 +60,14 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Skill Philosophy */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="mt-12 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/5 to-primary/10 p-6 text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-card border border-border/50">
-            <span className="text-primary">💡</span>
-            <span className="text-muted-foreground text-sm">
-              Always learning, always growing, technology never stops evolving
-            </span>
-          </div>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Mission</p>
+          <p className="mt-3 text-lg text-foreground">Building practical software that solves real-world problems.</p>
         </motion.div>
       </div>
     </section>
