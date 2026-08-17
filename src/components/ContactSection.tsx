@@ -46,9 +46,6 @@ const ContactSection = () => {
           <h2 className="section-heading">
             Let's <span className="text-gradient">Connect</span>
           </h2>
-          <p className="section-subheading mx-auto">
-            Open to opportunities, collaborations, and interesting conversations
-          </p>
         </motion.div>
 
         <motion.div

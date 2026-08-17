@@ -7,6 +7,7 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
+  { href: "#certifications", label: "Certifications" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -48,14 +49,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <a
-            href="#contact"
-            className="hidden md:block btn-primary text-sm absolute right-0 top-1/2 -translate-y-1/2"
-          >
-            Let's Connect
-          </a>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -84,13 +77,6 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setIsMobileOpen(false)}
-                className="btn-primary text-sm text-center mt-2"
-              >
-                Let's Connect
-              </a>
             </div>
           </motion.div>
         )}

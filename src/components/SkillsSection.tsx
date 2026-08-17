@@ -66,9 +66,6 @@ const SkillsSection = () => {
           <h2 className="section-heading">
             Tech <span className="text-gradient">Stack</span>
           </h2>
-          <p className="section-subheading mx-auto">
-            Technologies I work with to bring ideas to life
-          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

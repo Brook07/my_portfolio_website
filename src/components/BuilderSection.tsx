@@ -40,9 +40,6 @@ const BuilderSection = () => {
           <h2 className="section-heading">
             Builder <span className="text-gradient">Mindset</span>
           </h2>
-          <p className="section-subheading mx-auto">
-            My approach to learning and growing as a developer
-          </p>
         </motion.div>
 
         {/* Steps Timeline */}

@@ -32,9 +32,6 @@ const AboutSection = () => {
           <h2 className="section-heading">
             About <span className="text-gradient">Me</span>
           </h2>
-          <p className="section-subheading mx-auto">
-            CS student passionate about building systems that scale
-          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">

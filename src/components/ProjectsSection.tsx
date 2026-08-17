@@ -70,9 +70,6 @@ const ProjectsSection = () => {
           <h2 className="section-heading">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="section-subheading mx-auto">
-            Real-world applications focused on system design and backend logic
-          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
