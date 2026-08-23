@@ -25,7 +25,7 @@ const skillCategories = [
   {
     title: "Specialties",
     icon: Target,
-    skills: ["MERN Stack", "Backend", "AI/ML", "GIS & Geospatial Systems"],
+    skills: ["MERN Stack", "linux" "Backend", "AI/ML", "GIS & Geospatial Systems"],
   },
 ];
 
