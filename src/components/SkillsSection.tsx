@@ -19,6 +19,7 @@ const skillCategories = [
       "Django",
       "NumPy",
       "Pandas",
+      "FastAPI"
     ],
   },
   {
