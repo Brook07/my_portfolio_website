@@ -3,8 +3,24 @@ import { Braces, Code2, Target } from "lucide-react";
 import { useRef } from "react";
 
 const skillCategories = [
-  { title: "Languages", icon: Code2, skills: ["C", "C++", "Python", "JavaScript", "SQL"] },
-  { title: "Frameworks", icon: Braces, skills: ["React", "Express.js", "Django"] },
+  {
+    title: "Languages",
+    icon: Code2,
+    skills: ["C", "C++", "Python", "JavaScript", "SQL"],
+  },
+  {
+    title: "Frameworks/Libraries",
+    icon: Braces,
+    skills: [
+      "React",
+      "Express.js",
+      "Node.js",
+      "Tailwind CSS",
+      "Django",
+      "NumPy",
+      "Pandas",
+    ],
+  },
   {
     title: "Specialties",
     icon: Target,
