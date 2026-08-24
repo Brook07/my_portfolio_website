@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { Braces, Code2, Target } from "lucide-react";
+import { Braces, Cloud, Code2, Target } from "lucide-react";
 import { useRef } from "react";
 
 const skillCategories = [
@@ -25,7 +25,7 @@ const skillCategories = [
   {
     title: "Specialties",
     icon: Target,
-    skills: ["MERN Stack", "linux" "Backend", "AI/ML", "GIS & Geospatial Systems"],
+    skills: ["MERN Stack", "linux", "Backend", "AI/ML", "GIS & Geospatial Systems"],
   },
 ];
 
@@ -80,11 +80,31 @@ const SkillsSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-12 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/5 to-primary/10 p-6 text-center"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-8 rounded-2xl border border-primary/20 bg-card/70 p-6 shadow-lg backdrop-blur-sm"
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Mission</p>
-          <p className="mt-3 text-lg text-foreground">Building practical software that solves real-world problems.</p>
+          <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-primary">
+            <Cloud size={20} />
+            ☁️ Deployment
+          </h3>
+          <div className="flex flex-wrap items-center gap-3">
+            <img
+              src="https://img.shields.io/badge/Cloudflare-F38020.svg?style=for-the-badge&logo=cloudflare&logoColor=white"
+              alt="Cloudflare"
+            />
+            <img
+              src="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=vercel&logoColor=white"
+              alt="Vercel"
+            />
+            <img
+              src="https://img.shields.io/badge/Railway-0B0D0E.svg?style=for-the-badge&logo=railway&logoColor=white"
+              alt="Railway"
+            />
+            <img
+              src="https://img.shields.io/badge/Render-46E3B7.svg?style=for-the-badge&logo=render&logoColor=white"
+              alt="Render"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
